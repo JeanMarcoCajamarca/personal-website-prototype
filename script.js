@@ -58,6 +58,22 @@
     });
   }
 
+  // About page preview: toggle inline frame for pages/about.html
+  var aboutToggle = document.getElementById("about-toggle");
+  var aboutPreview = document.getElementById("about-preview");
+  if (aboutToggle && aboutPreview) {
+    aboutToggle.addEventListener("click", function () {
+      var opening = aboutPreview.hidden;
+      aboutPreview.hidden = !opening;
+      aboutToggle.setAttribute("aria-expanded", String(opening));
+      aboutToggle.textContent = opening ? "Hide About" : "About JMC";
+      var frame = aboutPreview.querySelector("iframe");
+      if (opening && !frame.getAttribute("src")) {
+        frame.setAttribute("src", frame.getAttribute("data-src"));
+      }
+    });
+  }
+
   // Copy email address
   var copyBtn = document.getElementById("copy-email");
   var copyStatus = document.getElementById("copy-status");
