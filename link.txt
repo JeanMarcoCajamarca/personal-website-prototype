@@ -1,0 +1,3 @@
+https://jack-karus3l.nekoweb.org/
+
+Copy and paste this link in the index.html file, it must allow the user to open that link to another tab. Tell gemini to do the work for CSS and JS also.
